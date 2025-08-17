@@ -1,18 +1,35 @@
+# 🏠 PropertyAI – MVP Property Recommendation App
 
-# PropertyAI — Streamlit Hybrid Recommender (MVP)
+An **AI-powered property recommender** built with **Streamlit**, combining **traditional ML + NLP**.
 
-## Run locally
+## ✨ Features
+- Hybrid recommendation:
+  - **Structured ML scoring** (price, size, bedrooms, bathrooms, commute, school rating, etc.)
+  - **Semantic NLP matching** using property descriptions
+- Returns **Top 3 best-matching properties** ranked by score
+- Interactive single-page Streamlit UI
+- Supports **CSV upload** (with same schema) for testing on new datasets
+
+## 📊 Dataset Schema
+The app expects a dataset with the following columns:
+
+- `address` (unique property identifier)  
+- `city`  
+- `price`  
+- `bedrooms`  
+- `size_sqft`  
+- `school_rating`  
+- `commute_time_min`  
+- `bathrooms`  
+- `year_built`  
+- `has_pool` (0/1)  
+- `garage_spaces`  
+- `lot_size_sqft`  
+- `description` (rich text description of property)  
+
+## 🚀 Run Locally
+Clone this repo and run:
+
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
-```
-
-Ensure the following files are in the same folder:
-- app.py
-- enhanced_property_data_with_rich_descriptions.csv
-- property_recommender_artifacts.pkl
-
-## Streamlit Cloud
-1. Push these files to a GitHub repo.
-2. Create a new Streamlit Cloud app and point it to `app.py`.
-3. Add the same three files to the repository root.
